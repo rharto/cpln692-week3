@@ -13,8 +13,8 @@
 
     <!--javascript imports-->
     <script src="leaflet.js"></script>
-    <script src="part4-data-clean.js"></script>
-    <script src="part4-data-dirty.js"></script>
+    <script src="part3-data-clean.js"></script>
+    <script src="part3-data-dirty.js"></script>
 
     <script>
 
@@ -63,7 +63,9 @@
 
     ===================== */
 
-    var data = bikeArrayClean;
+
+
+
 
     /* =====================
 
@@ -71,7 +73,15 @@
 
     ===================== */
 
+    var data = bikeArrayClean;
 
+    var filtery = function (i) {
+      if (i[3] > 20) {
+        return i
+      }
+    }
+
+    dataFiltered = data.filter(filtery)
 
     /* =====================
 
@@ -98,7 +108,7 @@
 
     ===================== */
 
-
+    dataFiltered.forEach(function(arr){return L.marker([arr[1], arr[0]]).addTo(map).bindPopup(arr[2])})
 
     /* =====================
 

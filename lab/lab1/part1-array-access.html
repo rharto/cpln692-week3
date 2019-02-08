@@ -75,9 +75,10 @@
 
     ===================== */
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    var restaurantData = [[39.969592, -75.132037, 'Ekta'], [39.945373, -75.178800, 'Fuzhou House'], [39.951197, -75.172308, 'V Street'], [39.934903, -75.162199, 'Tiffin Indian'], [39.948021, -75.162290, 'Bud & Marilyns'] ]
+    restaurantData.forEach(function(arr){return L.marker([arr[0], arr[1]]).addTo(map).bindPopup(arr[2])})
+
+    console.log(restaurantData)
 
     /* =====================
 
